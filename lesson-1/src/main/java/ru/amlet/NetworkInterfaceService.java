@@ -1,34 +1,20 @@
 package ru.amlet;
 
-import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
-import java.net.UnknownHostException;
 import java.util.Enumeration;
 
-import static java.net.InetAddress.getLocalHost;
 import static java.net.NetworkInterface.getNetworkInterfaces;
 
-public class LessonExecutor {
+public class NetworkInterfaceService {
 
-    private final PrintService printService = new PrintService();
+    private final PrintService printService;
 
-    public void execute() {
-        workWithInetAddress();
-        workWithNetworkInterface();
+    public NetworkInterfaceService(PrintService printService) {
+        this.printService = printService;
     }
 
-    private void workWithInetAddress() {
-        try {
-            InetAddress inetAddress = getLocalHost();
-            printService.print("Хост называется: " + inetAddress.getHostName());
-            printService.printSeparator();
-        } catch (UnknownHostException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void workWithNetworkInterface() {
+    public void workWithNetworkInterface() {
         try {
             Enumeration<NetworkInterface> networkInterfaceEnumeration = getNetworkInterfaces();
 
@@ -46,4 +32,5 @@ public class LessonExecutor {
             e.printStackTrace();
         }
     }
+
 }
