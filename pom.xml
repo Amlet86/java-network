@@ -6,9 +6,9 @@
     <groupId>ru.amlet</groupId>
     <artifactId>java-network</artifactId>
     <version>1.0.0</version>
+    <packaging>pom</packaging>
 
     <modelVersion>4.0.0</modelVersion>
-    <packaging>pom</packaging>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
@@ -20,6 +20,7 @@
         <module>lesson-1</module>
         <module>lesson-2</module>
         <module>lesson-3</module>
+        <module>lesson-4</module>
     </modules>
 
 </project>
